@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">ShortcutDemo</string>
+
+    <string name="open_door_by_phone">手机开门</string>
+    <string name="open_door_by_phone_disable">手机开门不可用</string>
+
+    <string name="scan_by_phone_disable">扫一扫不可用</string>
+    <string name="scan_by_phone">扫一扫</string>
+</resources>

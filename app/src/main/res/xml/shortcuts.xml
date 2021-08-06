@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <shortcut
+        android:enabled="true"
+        android:icon="@mipmap/ic_short_cut_open_door"
+        android:shortcutDisabledMessage="@string/open_door_by_phone_disable"
+        android:shortcutId="access"
+        android:shortcutLongLabel="@string/open_door_by_phone"
+        android:shortcutShortLabel="@string/open_door_by_phone">
+
+        <!--需要到加载完所有配置信息(经过NewMainActivity)才能到落地页去，否则会出现白屏，获取不到配置信息的问题-->
+        <!--android:targetClass="com.goals.shortcutwidgetdemo.AccessControlActivity"-->
+        <!--TODO 这里的路由是写死的，不好，怎么能动态获取值？-->
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetClass="com.goals.shortcutwidgetdemo.NewMainActivity"
+            android:targetPackage="com.goals.shortcutdemo">
+            <extra android:name="route" android:value="xxx://xxx.com/property/opendoor/list" />
+        </intent>
+    </shortcut>
+
+</shortcuts>

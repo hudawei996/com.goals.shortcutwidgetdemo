@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="single_widget_iv_width">54dp</dimen>
+    <dimen name="single_widget_iv_height">54dp</dimen>
+    <dimen name="single_widget_tv_text_margin_top">6dp</dimen>
+    <dimen name="single_widget_tv_text_size">12sp</dimen>
+</resources>

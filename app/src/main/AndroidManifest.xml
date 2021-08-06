@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.goals.shortcutwidgetdemo">
+
+    <application
+        android:name="com.goals.shortcutwidgetdemo.App"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.ShortcutDemo">
+
+        <activity
+            android:name="com.goals.shortcutwidgetdemo.NewMainActivity"
+            android:exported="true" />
+
+        <activity
+            android:name="com.goals.shortcutwidgetdemo.MainActivity"
+            android:exported="true">
+
+            <!--这种静态配置的写法已经不能满足现有需求，需要带参数跳转到页面去-->
+            <meta-data
+                android:name="android.app.shortcuts"
+                android:resource="@xml/shortcuts"/>
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!--微件接受者，和广播接收者一样，需要注册-->
+        <receiver
+            android:name=".widget.OpenDoorNewWidget"
+            android:label="@string/open_door_by_phone">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="com.goals.shortcutwidgetdemo.BROADCAST_TO_WIDGET" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/app_widget_provider_open_door" />
+        </receiver>
+
+    </application>
+
+</manifest>
